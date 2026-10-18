@@ -684,8 +684,11 @@
 
 .footer-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-left: auto;
+  max-width: 400px;
+  line-height: 1.8;
 }
 
 .footer-nav a {
