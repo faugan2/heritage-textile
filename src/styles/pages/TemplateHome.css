@@ -828,44 +828,59 @@
 
 @media (max-width: 760px) {
   .footer-top {
-    padding: 18px 5%;
+    padding: 16px 5%;
     flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
   }
 
   .footer-nav-main {
     order: 2;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .footer-nav-main a {
+    font-size: 10px;
+    padding: 4px;
   }
 
   .footer-right {
     order: 3;
+    width: 100%;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: center;
+    gap: 10px;
   }
 
   .socials {
     gap: 6px;
+    justify-content: center;
   }
 
   .socials a {
-    width: 24px;
-    height: 24px;
-    font-size: 9px;
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
   }
 
   .footer-slogan {
-    text-align: left;
-    font-size: 8px;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.4;
   }
 
   .copyright-bar {
     font-size: 8px;
-    padding: 10px 5%;
+    padding: 12px 5%;
   }
 }
 
