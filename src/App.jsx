@@ -96,6 +96,13 @@ import TemplateHomePage from './pages/TemplateHomePage'
 import ShopsAdsPage from './pages/ShopsAdsPage'
 import ProtectedRoute from './components/ProtectedRoute'
 
+// Pages - Role-based dashboards
+import RegisterRole from './pages/RegisterRole'
+import ArtisanDashboard from './pages/ArtisanDashboard'
+import ClientDashboard from './pages/ClientDashboard'
+import AdminDashboard from './pages/AdminDashboard'
+import Unauthorized from './pages/Unauthorized'
+
 function AppContent() {
   // const { isAuthenticated } = useAuth()
 
@@ -113,10 +120,17 @@ function AppContent() {
         {/* Auth Pages (sans MainLayout) */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/register-role" element={<RegisterRole />} />
         <Route path="/password-reset" element={<PasswordResetPage />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
 
         {/* Toutes les autres pages avec MainLayout */}
         <Route element={<MainLayout />}>
+          {/* Role-based Dashboards */}
+          <Route path="/artisan" element={<ProtectedRoute requiredRole="artisan"><ArtisanDashboard /></ProtectedRoute>} />
+          <Route path="/client" element={<ProtectedRoute requiredRole="client"><ClientDashboard /></ProtectedRoute>} />
+          <Route path="/admin" element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />
+
           <Route path="/boutiques-publicite" element={<ShopsAdsPage />} />
           {/* E-commerce */}
           <Route path="/products" element={<ProductsPage />} />
