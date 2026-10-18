@@ -103,6 +103,24 @@ import ClientDashboard from './pages/ClientDashboard'
 import AdminDashboard from './pages/AdminDashboard'
 import Unauthorized from './pages/Unauthorized'
 
+// Artisan pages
+import ArtisanProducts from './pages/artisan/ArtisanProducts'
+import ArtisanSales from './pages/artisan/ArtisanSales'
+import ArtisanProfile from './pages/artisan/ArtisanProfile'
+import ArtisanAnalytics from './pages/artisan/ArtisanAnalytics'
+
+// Client pages
+import ClientOrders from './pages/client/ClientOrders'
+import ClientWishlist from './pages/client/ClientWishlist'
+import ClientProfile from './pages/client/ClientProfile'
+import ClientAddresses from './pages/client/ClientAddresses'
+
+// Admin pages
+import AdminUsers from './pages/admin/AdminUsers'
+import AdminProducts from './pages/admin/AdminProducts'
+import AdminAnalytics from './pages/admin/AdminAnalytics'
+import AdminSettings from './pages/admin/AdminSettings'
+
 function AppContent() {
   // const { isAuthenticated } = useAuth()
 
@@ -128,8 +146,22 @@ function AppContent() {
         <Route element={<MainLayout />}>
           {/* Role-based Dashboards */}
           <Route path="/artisan" element={<ProtectedRoute requiredRole="artisan"><ArtisanDashboard /></ProtectedRoute>} />
+          <Route path="/artisan/products" element={<ProtectedRoute requiredRole="artisan"><ArtisanProducts /></ProtectedRoute>} />
+          <Route path="/artisan/sales" element={<ProtectedRoute requiredRole="artisan"><ArtisanSales /></ProtectedRoute>} />
+          <Route path="/artisan/profile" element={<ProtectedRoute requiredRole="artisan"><ArtisanProfile /></ProtectedRoute>} />
+          <Route path="/artisan/analytics" element={<ProtectedRoute requiredRole="artisan"><ArtisanAnalytics /></ProtectedRoute>} />
+
           <Route path="/client" element={<ProtectedRoute requiredRole="client"><ClientDashboard /></ProtectedRoute>} />
+          <Route path="/client/orders" element={<ProtectedRoute requiredRole="client"><ClientOrders /></ProtectedRoute>} />
+          <Route path="/client/wishlist" element={<ProtectedRoute requiredRole="client"><ClientWishlist /></ProtectedRoute>} />
+          <Route path="/client/profile" element={<ProtectedRoute requiredRole="client"><ClientProfile /></ProtectedRoute>} />
+          <Route path="/client/addresses" element={<ProtectedRoute requiredRole="client"><ClientAddresses /></ProtectedRoute>} />
+
           <Route path="/admin" element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/admin/users" element={<ProtectedRoute requiredRole="admin"><AdminUsers /></ProtectedRoute>} />
+          <Route path="/admin/products" element={<ProtectedRoute requiredRole="admin"><AdminProducts /></ProtectedRoute>} />
+          <Route path="/admin/analytics" element={<ProtectedRoute requiredRole="admin"><AdminAnalytics /></ProtectedRoute>} />
+          <Route path="/admin/settings" element={<ProtectedRoute requiredRole="admin"><AdminSettings /></ProtectedRoute>} />
 
           <Route path="/boutiques-publicite" element={<ShopsAdsPage />} />
           {/* E-commerce */}
