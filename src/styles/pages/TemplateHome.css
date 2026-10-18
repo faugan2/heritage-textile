@@ -328,10 +328,12 @@
   min-height: 330px;
   overflow: hidden;
   background: white;
+  padding-left: max(5.5%, calc((100% - 1320px)/2));
+  padding-right: max(5.5%, calc((100% - 1320px)/2));
 }
 
 .movement-copy {
-  padding: 43px max(5.5%, calc((100% - 1320px)/2)) 40px;
+  padding: 43px 25px 40px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -528,8 +530,9 @@
     padding: 10px;
   }
 
-  .movement-copy {
+  .movement {
     padding-left: 4%;
+    padding-right: 4%;
   }
 }
 
@@ -616,8 +619,13 @@
     min-height: auto;
   }
 
+  .movement {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   .movement-copy {
-    padding: 35px 5% 30px;
+    padding: 35px 0 30px;
   }
 
   .movement-art {
