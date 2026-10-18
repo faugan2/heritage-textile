@@ -671,43 +671,15 @@
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
   flex-shrink: 0;
   text-decoration: none;
   color: inherit;
 }
 
-.footer-brand .brand-mark {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: #ffda68;
-  background: radial-gradient(circle at 55% 45%,#7c075f 0 30%,#edb841 31% 35%,#50104f 36% 62%,#e9b747 63% 70%,#5b174e 71%);
-  border: 2px solid #e5bd61;
-  font-size: 21px;
-  box-shadow: inset 0 0 0 3px #5e1451;
-}
-
-.footer-brand .brand-copy {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.footer-brand .brand-copy strong {
-  font-size: 22px;
-  color: var(--deep);
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.footer-brand .brand-copy small {
-  font-size: 8px;
-  line-height: 1.12;
-  font-weight: 700;
-  color: #252133;
+.footer-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer-nav-main {

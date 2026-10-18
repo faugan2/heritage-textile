@@ -50,12 +50,8 @@ export default function TemplateFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-top">
-        <Link to="/" className="brand footer-brand">
-          <span className="brand-mark">✦</span>
-          <span className="brand-copy">
-            <strong>VPPT</strong>
-            <small>Valorisation et promotion<br />des textiles traditionnels</small>
-          </span>
+        <Link to="/" className="footer-brand">
+          <img src="/new_logo.png" alt="VPPT - Valorisation et Promotion des Textiles Traditionnels" className="footer-logo" />
         </Link>
 
         <nav className="footer-nav-main">
