@@ -1,0 +1,47 @@
+.passport{margin-top:8px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 4px 14px rgba(20,33,90,.05);overflow:hidden}
+.passport__head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;background:linear-gradient(90deg,#fff8e6 0%,#fff 100%);border-bottom:1px solid #f7e5bb}
+.passport__title{display:flex;align-items:center;gap:14px}
+.passport__icon{width:52px;height:52px;border-radius:50%;background:var(--green-dark);color:#fff;display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+.passport__title h3{font-size:1.1rem;font-weight:700;color:var(--navy);line-height:1.2}
+.passport__title p{font-size:.85rem;color:var(--muted)}
+.passport__status{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:var(--green-light);color:var(--green-dark);font-size:.8rem;font-weight:700;white-space:nowrap}
+
+.passport__body{padding:22px 24px}
+.passport__info{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.passport__cell{background:#f8f9fc;border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.passport__cell span{display:block;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+.passport__cell strong{font-size:.9rem;color:var(--navy);font-weight:700;word-break:break-all}
+
+.passport__toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:999px;border:1px solid var(--yellow);background:#fff;color:var(--navy);font:600 .92rem Poppins,sans-serif;cursor:pointer;transition:.2s}
+.passport__toggle:hover{background:#fff8e6}
+.passport__toggle .ico{color:var(--orange)}
+
+.passport__details{margin-top:20px;padding-top:20px;border-top:1px solid var(--border);display:grid;gap:18px}
+.passport__secure{display:flex;gap:14px;padding:16px 18px;border-radius:12px;background:var(--green-light);border:1px solid #d6ebd9}
+.passport__secure .ico{color:var(--green-dark);font-size:1.2rem;margin-top:2px}
+.passport__secure h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.passport__secure p{font-size:.85rem;color:var(--text)}
+
+.passport__qr{text-align:center;padding:18px;border:1px dashed var(--border);border-radius:12px;background:#fff}
+.passport__qr .ico{font-size:3rem;color:var(--navy);margin-bottom:8px}
+.passport__qr p{font-size:.85rem;color:var(--muted)}
+.passport__qr p:first-child{font-weight:600;color:var(--navy)}
+
+.passport__timeline h4{font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em}
+.passport__step{display:grid;grid-template-columns:20px 1fr auto;gap:14px;position:relative;padding-bottom:16px}
+.passport__step:last-child{padding-bottom:0}
+.passport__step::before{content:"";position:absolute;left:8px;top:18px;bottom:0;width:2px;background:var(--yellow)}
+.passport__step:last-child::before{display:none}
+.passport__dot{width:18px;height:18px;border-radius:50%;background:var(--yellow);border:3px solid #fff8e6;box-shadow:0 0 0 1px var(--yellow);margin-top:2px;position:relative;z-index:1}
+.passport__step strong{display:block;font-size:.9rem;color:var(--navy)}
+.passport__step small{font-size:.8rem;color:var(--muted)}
+.passport__check{color:var(--green);font-size:.9rem;margin-top:2px}
+
+.passport__foot{text-align:center;font-size:.85rem;color:var(--muted);padding-top:16px;border-top:1px solid var(--border)}
+.passport__foot b{color:var(--green-dark)}
+
+@media (max-width:600px){
+  .passport__head{flex-direction:column;align-items:flex-start;padding:18px}
+  .passport__body{padding:18px}
+  .passport__info{grid-template-columns:1fr}
+}

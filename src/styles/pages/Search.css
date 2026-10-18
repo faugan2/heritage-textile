@@ -1,0 +1,9 @@
+.search-field{position:relative}
+.search-field i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--orange);font-size:.95rem;pointer-events:none}
+.search-field input{width:100%;padding:12px 16px 12px 40px;border:1px solid var(--border);border-radius:999px;font:inherit;font-size:.92rem;background:#f8f9fc;color:var(--text);outline:none;transition:.2s}
+.search-field input:focus{border-color:var(--yellow);background:#fff;box-shadow:0 0 0 3px rgba(252,196,25,.25)}
+
+.price-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.price-fields label{display:grid;gap:6px;font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.price-fields input{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;font:inherit;font-size:.9rem;color:var(--text);background:#f8f9fc;outline:none}
+.price-fields input:focus{border-color:var(--yellow);background:#fff}

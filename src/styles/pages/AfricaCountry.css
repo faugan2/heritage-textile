@@ -1,0 +1,56 @@
+.country-hero{background:linear-gradient(90deg,#f6f7fb 0%,#fff 45%,#f3f4f8 100%);padding:28px 0 56px}
+.country-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:12px}
+.country-hero__code{width:96px;height:96px;border-radius:50%;background:var(--green-dark);color:#fff;display:grid;place-items:center;font-size:1.6rem;font-weight:800;border:5px solid #fff;box-shadow:var(--shadow);margin-bottom:18px}
+.country-hero h1{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.5px}
+.country-hero__region{color:var(--green);font-weight:600;margin:8px 0 18px}
+.country-hero__desc{color:var(--text);line-height:1.75;margin-bottom:22px;max-width:560px}
+.country-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-size:.92rem;color:var(--muted)}
+.country-facts b{color:var(--navy)}
+.country-kpis{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.country-kpi{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;box-shadow:0 4px 14px rgba(20,33,90,.04)}
+.country-kpi b{display:block;font-size:1.9rem;font-weight:800;color:var(--green-dark)}
+.country-kpi span{font-size:.86rem;color:var(--muted)}
+
+.country-section{padding:56px 0 8px}
+.artisan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.artisan-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.3s}
+.artisan-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.artisan-card__avatar{width:56px;height:56px;border-radius:50%;background:var(--green-light);color:var(--green-dark);display:grid;place-items:center;font-size:1.3rem;margin-bottom:14px}
+.artisan-card h3{font-size:1.02rem;font-weight:700;color:var(--navy)}
+.artisan-card p{font-size:.88rem;color:var(--muted);margin:4px 0 14px}
+.artisan-card__foot{display:flex;justify-content:space-between;font-size:.88rem;color:var(--navy);padding-top:12px;border-top:1px solid var(--border)}
+.artisan-card__foot i{color:var(--yellow-dark)}
+
+.impact-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.impact-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px 16px;text-align:center}
+.impact-card i{font-size:1.5rem;color:var(--orange);margin-bottom:10px}
+.impact-card b{display:block;font-size:1.2rem;font-weight:800;color:var(--green-dark)}
+.impact-card span{font-size:.8rem;color:var(--muted)}
+
+.timeline{max-width:720px;margin:0 auto;display:grid;gap:0}
+.timeline__item{display:grid;grid-template-columns:24px 1fr;gap:18px;position:relative;padding-bottom:28px}
+.timeline__item:last-child{padding-bottom:0}
+.timeline__item::before{content:"";position:absolute;left:9px;top:20px;bottom:0;width:2px;background:var(--yellow)}
+.timeline__item:last-child::before{display:none}
+.timeline__dot{width:20px;height:20px;border-radius:50%;background:var(--yellow);border:4px solid #fff8e6;box-shadow:0 0 0 1px var(--yellow);position:relative;z-index:1}
+.timeline__date{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--orange)}
+.timeline__event{font-size:1rem;color:var(--navy);font-weight:600;margin-top:2px}
+
+.country-cta{margin:56px 0 64px;padding:56px 40px;border-radius:var(--radius);background:linear-gradient(90deg,#0d4f20,#14692b 60%,#0d4f20);color:#fff;text-align:center}
+.country-cta h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin-bottom:12px}
+.country-cta p{max-width:560px;margin:0 auto 26px;opacity:.95}
+.country-cta .btn{border:none;cursor:pointer;font-family:inherit}
+
+.country-missing{text-align:center;padding:110px 20px}
+.country-missing h1{font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:10px}
+.country-missing p{color:var(--muted);margin-bottom:24px}
+
+@media (max-width:992px){
+  .country-hero__grid{grid-template-columns:1fr;gap:28px}
+  .artisan-cards{grid-template-columns:1fr 1fr}
+  .impact-cards{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:600px){
+  .artisan-cards,.impact-cards,.country-kpis,.country-facts{grid-template-columns:1fr}
+  .country-cta{padding:40px 22px}
+}

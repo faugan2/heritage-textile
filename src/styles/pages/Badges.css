@@ -1,0 +1,18 @@
+.badge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:40px 0 16px}
+.badge-card{background:#fff;border:2px solid var(--badge);border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column;gap:10px;transition:.3s}
+.badge-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.badge-card__icon{width:68px;height:68px;border-radius:50%;background:color-mix(in srgb,var(--badge) 14%,#fff);color:var(--badge);display:grid;place-items:center;font-size:1.8rem;margin-bottom:6px}
+.badge-card h3{font-size:1.1rem;font-weight:700;color:var(--navy)}
+.badge-card__desc{font-size:.9rem;color:var(--muted);line-height:1.55}
+.badge-card__criteria{margin-top:auto;padding:14px 16px;border-radius:12px;background:#f8f9fc;border:1px solid var(--border);display:grid;gap:4px}
+.badge-card__criteria span{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.badge-card__criteria b{font-size:.9rem;color:var(--navy)}
+.badge-card__holders{font-size:.84rem;color:var(--green-dark);font-weight:600}
+.badge-card__holders i{margin-right:6px}
+
+@media (max-width:992px){
+  .badge-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .badge-grid{grid-template-columns:1fr}
+}

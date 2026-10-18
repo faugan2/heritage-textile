@@ -1,0 +1,65 @@
+.africa-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:8px}
+.africa-stat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 18px;text-align:center;box-shadow:0 4px 14px rgba(20,33,90,.04)}
+.africa-stat i{font-size:1.4rem;color:var(--orange);margin-bottom:10px}
+.africa-stat b{display:block;font-size:1.6rem;font-weight:800;color:var(--green-dark)}
+.africa-stat span{font-size:.85rem;color:var(--muted)}
+
+.region-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:36px 0 36px}
+.region-tab{padding:10px 18px;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--navy);font:600 .86rem Poppins,sans-serif;cursor:pointer;transition:.2s}
+.region-tab:hover{border-color:var(--yellow)}
+.region-tab.is-active{background:var(--yellow);border-color:var(--yellow)}
+.region-tab span{color:var(--muted);font-weight:500;margin-left:4px}
+
+.country-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.country{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.3s;display:flex;flex-direction:column}
+.country:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.country__head{height:110px;background:linear-gradient(135deg,#eef7ef,#fff8e6);display:flex;align-items:center;justify-content:center;position:relative}
+.country__code{width:68px;height:68px;border-radius:50%;background:var(--green-dark);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.1rem;letter-spacing:.04em;border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.country__status{position:absolute;top:12px;right:12px;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;background:#fff;color:var(--green-dark);border:1px solid #d6ebd9}
+.country__status.is-growing{color:#8a5a00;border-color:#f7e5bb;background:#fff8e6}
+.country__body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.country__name{font-size:1.1rem;font-weight:700;color:var(--navy)}
+.country__region{font-size:.82rem;color:var(--green)}
+.country__rows{display:grid;gap:8px;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+.country__rows div{display:flex;justify-content:space-between;gap:10px}
+.country__rows b{color:var(--navy)}
+.country__specialty{font-size:.85rem;font-weight:600;text-align:center;padding:10px;border-radius:10px;background:var(--cream);color:var(--navy)}
+.country__ambassador{font-size:.82rem;color:var(--muted);text-align:center;margin-top:auto}
+.country__ambassador b{color:var(--navy)}
+
+.section-band{padding:64px 0}
+.section-band--soft{background:#f6f7fb}
+.section-heading{font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:14px;text-align:center}
+.section-lead{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 26px}
+.btn-row{display:flex;justify-content:center}
+.btn-row .btn{border:none;cursor:pointer;font-family:inherit}
+
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.roadmap__item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;position:relative}
+.roadmap__item::before{content:"";display:block;width:36px;height:4px;border-radius:4px;background:var(--yellow);margin:0 auto 14px}
+.roadmap__q{font-size:.8rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.roadmap__item h3{font-size:1.02rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.roadmap__item p{font-size:.88rem;color:var(--muted)}
+
+.impact-band{margin:0 0 64px;padding:56px 40px;border-radius:var(--radius);background:linear-gradient(90deg,#0d4f20,#14692b 60%,#0d4f20);color:#fff;text-align:center}
+.impact-band h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin-bottom:10px}
+.impact-band > p{opacity:.95;max-width:620px;margin:0 auto 32px}
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+.impact-grid div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:24px 16px}
+.impact-grid i{font-size:2rem;color:var(--yellow);margin-bottom:10px}
+.impact-grid b{display:block;font-size:1.8rem;font-weight:800}
+.impact-grid span{font-size:.9rem;opacity:.9}
+.impact-band .btn{border:none;cursor:pointer;font-family:inherit}
+
+@media (max-width:1100px){
+  .africa-stats{grid-template-columns:repeat(3,1fr)}
+  .country-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:992px){
+  .country-grid{grid-template-columns:repeat(2,1fr)}
+  .roadmap{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .africa-stats,.country-grid,.roadmap,.impact-grid{grid-template-columns:1fr}
+  .impact-band{padding:40px 22px}
+}

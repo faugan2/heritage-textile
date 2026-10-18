@@ -1,0 +1,29 @@
+.creators-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:48px 0 56px}
+.creator{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.creator:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.creator__media{height:220px;background:#f6f7fb;overflow:hidden}
+.creator__media img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.creator:hover .creator__media img{transform:scale(1.05)}
+.creator__body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.creator__name{font-size:1.15rem;font-weight:700;color:var(--navy)}
+.creator__place{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--green)}
+.creator__spec{font-size:.9rem;color:var(--muted)}
+.creator__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 0;margin-top:auto;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.creator__stats b{display:block;font-size:1rem;color:var(--navy)}
+.creator__stats span{font-size:.75rem;color:var(--muted)}
+.creator__rating{display:flex;align-items:center;gap:6px;font-weight:700;color:var(--navy)}
+.creator__rating i{color:var(--yellow-dark)}
+.creator__btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:var(--yellow);color:var(--navy);font-weight:700;font-size:.92rem;transition:.2s}
+.creator__btn:hover{background:var(--yellow-dark)}
+
+.join-band{margin:24px 0 64px;padding:56px 40px;border-radius:var(--radius);background:linear-gradient(90deg,#0d4f20,#14692b 60%,#0d4f20);color:#fff;text-align:center}
+.join-band h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin-bottom:12px}
+.join-band p{max-width:620px;margin:0 auto 26px;opacity:.95}
+
+@media (max-width:992px){
+  .creators-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .creators-grid{grid-template-columns:1fr;gap:20px}
+  .join-band{padding:40px 22px}
+}

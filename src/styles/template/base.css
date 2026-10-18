@@ -1,0 +1,57 @@
+:root{
+  --navy:#14215a;
+  --green:#14692b;
+  --green-dark:#0d4f20;
+  --green-light:#eef7ef;
+  --yellow:#fcc419;
+  --yellow-dark:#f2b300;
+  --orange:#f08c00;
+  --cream:#fff8e6;
+  --text:#1d2433;
+  --muted:#5b6475;
+  --border:#e6e9ef;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(20,33,90,.10);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--text);background:#fff;line-height:1.5;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.container{width:min(1440px,100% - 24px);margin-inline:auto}
+.ico{display:inline-flex;align-items:center;justify-content:center}
+
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo__badge{
+  width:58px;height:58px;border-radius:50%;
+  background:radial-gradient(circle,#fff 55%,#f7e2a1 56%,#e9b949 100%);
+  border:3px solid var(--yellow);display:grid;place-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.08)
+}
+.logo__badge span{font-family:Georgia,serif;font-weight:700;font-size:1.5rem;color:var(--navy);letter-spacing:-2px}
+.logo__badge.small{width:42px;height:42px;border-width:2px}
+.logo__badge.small span{font-size:1.05rem}
+.logo__img{height:64px;width:auto;display:block}
+.logo__text strong{display:block;font-size:1.65rem;font-weight:800;color:var(--navy);line-height:1}
+.logo__text small{display:block;font-size:.68rem;font-weight:600;color:var(--navy);line-height:1.2;margin-top:3px}
+
+.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 32px;border-radius:999px;font-weight:600;font-size:1.02rem;transition:.25s}
+.btn .ico{transition:.25s}
+.btn:hover .ico{transform:translateX(4px)}
+.btn--green{background:var(--green-dark);color:#fff}
+.btn--green:hover{background:var(--green);box-shadow:0 8px 20px rgba(20,105,43,.3)}
+.btn--yellow{background:var(--yellow);color:var(--navy)}
+.btn--yellow:hover{background:var(--yellow-dark);box-shadow:0 8px 20px rgba(242,179,0,.35)}
+
+.tag{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:600;font-size:.88rem;padding:5px 12px;border-radius:4px}
+.green{color:var(--green)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .reveal{opacity:1;transform:none}
+}

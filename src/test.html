@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Heritage Textiles Collection</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* TOP BAR */
+
+.top-bar{
+    background:#050505;
+    color:#dba221;
+    text-align:center;
+    padding:12px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #5d1793 0%,
+        #7f39cb 50%,
+        #5b148f 100%
+    );
+}
+
+/* PURPLE OVERLAY */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,.04) 0px,
+        rgba(255,255,255,.04) 2px,
+        transparent 2px,
+        transparent 10px
+    );
+
+    opacity:.35;
+}
+
+/* MODELS IMAGE */
+
+.hero-models{
+    position:absolute;
+    right:-90px;
+    bottom:0;
+    height:92%;
+    z-index:1;
+    object-fit:contain;
+    opacity:.95;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    padding:30px 60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    position:relative;
+    z-index:10;
+}
+
+/* LOGO */
+
+.logo{
+    color:#e0a321;
+    line-height:.9;
+}
+
+.logo-main{
+    font-size:68px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo-sub{
+    font-size:19px;
+    margin-top:16px;
+    letter-spacing:10px;
+    font-weight:400;
+}
+
+/* MENU */
+
+.menu{
+    display:flex;
+    gap:55px;
+
+    color:#fff;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:1px;
+}
+
+.menu a{
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#e0a321;
+}
+
+/* ICONS */
+
+.icons{
+    display:flex;
+    gap:24px;
+    color:#fff;
+    font-size:22px;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+    width:100%;
+    padding:90px 65px;
+
+    position:relative;
+    z-index:5;
+}
+
+.left-content{
+    width:42%;
+    color:#fff;
+}
+
+/* SMALL TITLE */
+
+.small-title{
+    color:#f1b420;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:2px;
+
+    margin-bottom:50px;
+    position:relative;
+}
+
+.small-title::after{
+    content:"";
+    width:65px;
+    height:3px;
+    background:#f1b420;
+
+    position:absolute;
+    left:0;
+    bottom:-18px;
+}
+
+/* MAIN TITLE */
+
+h1{
+    font-size:105px;
+    line-height:.92;
+    font-weight:800;
+
+    margin-bottom:35px;
+}
+
+/* DESCRIPTION */
+
+.description{
+    font-size:24px;
+    line-height:1.5;
+    width:90%;
+    color:#f5f5f5;
+
+    margin-bottom:45px;
+}
+
+/* CTA */
+
+.cta{
+    display:inline-flex;
+    align-items:center;
+    gap:15px;
+
+    background:#000;
+    color:#f1b420;
+
+    padding:24px 38px;
+
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.cta:hover{
+    transform:translateY(-4px);
+}
+
+/* SLIDER */
+
+.slider-nav{
+    position:absolute;
+    left:30px;
+    top:57%;
+    transform:translateY(-50%);
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+    z-index:5;
+
+    color:#fff;
+    font-size:36px;
+    font-weight:300;
+}
+
+.slider-nav .active{
+    color:#f1b420;
+    position:relative;
+}
+
+.slider-nav .active::after{
+    content:"";
+    width:3px;
+    height:85px;
+    background:#f1b420;
+
+    position:absolute;
+    left:50%;
+    top:65px;
+
+    transform:translateX(-50%);
+}
+
+/* CATEGORIES */
+
+.categories{
+    background:#f4f4f4;
+    padding:45px;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+/* CARD */
+
+.category-card{
+    background:#fff;
+    position:relative;
+    overflow:hidden;
+
+    min-height:260px;
+
+    padding:28px;
+
+    display:flex;
+    align-items:flex-end;
+
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-5px);
+}
+
+.category-card img{
+    position:absolute;
+    right:0;
+    bottom:0;
+    height:100%;
+    object-fit:cover;
+}
+
+.category-content{
+    position:relative;
+    z-index:2;
+}
+
+.category-title{
+    font-size:36px;
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.view-link{
+    font-size:17px;
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    padding:45px 50px;
+    gap:30px;
+
+    border-top:1px solid #ddd;
+}
+
+.feature{
+    text-align:center;
+}
+
+.feature-icon{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.feature h3{
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#666;
+    font-size:15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1300px){
+
+    h1{
+        font-size:82px;
+    }
+
+    .left-content{
+        width:50%;
+    }
+
+    .hero-models{
+        right:-160px;
+    }
+}
+
+@media(max-width:1100px){
+
+    .menu{
+        gap:25px;
+    }
+
+    .hero-models{
+        opacity:.35;
+        right:-200px;
+    }
+
+    .left-content{
+        width:70%;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:800px){
+
+    .navbar{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content{
+        padding:60px 30px;
+    }
+
+    .left-content{
+        width:100%;
+        text-align:center;
+    }
+
+    .small-title::after{
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    h1{
+        font-size:58px;
+    }
+
+    .description{
+        width:100%;
+        font-size:20px;
+    }
+
+    .slider-nav{
+        display:none;
+    }
+
+    .hero-models{
+        opacity:.2;
+        right:-260px;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+    ◆ LIVRAISON OFFERTE DÈS 50€ D'ACHAT
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <!-- MODELS -->
+
+    <img src="./images/new_ui/new_ui2.png" class="hero-models">
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-main">MYATCHAN</div>
+            <div class="logo-sub">COLLECTION</div>
+        </div>
+
+        <div class="menu">
+            <a href="#">NOUVEAUTÉS</a>
+            <a href="#">FEMME</a>
+            <a href="#">HOMME</a>
+            <a href="#">COLLECTIONS</a>
+            <a href="#">À PROPOS</a>
+        </div>
+
+        <div class="icons">
+            <span>⌕</span>
+            <span>◯</span>
+            <span>👜</span>
+        </div>
+
+    </nav>
+
+    <!-- SLIDER -->
+
+    <div class="slider-nav">
+        <div class="active">01</div>
+        <div>02</div>
+        <div>03</div>
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="hero-content">
+
+        <div class="left-content">
+
+            <div class="small-title">
+                MODE. CULTURE. AUDACE.
+            </div>
+
+            <h1>
+                LA MODE,<br>
+                C’EST NOUS!
+            </h1>
+
+            <p class="description">
+                Des pièces uniques inspirées de nos racines,
+                conçues pour aujourd’hui.
+            </p>
+
+            <a href="#" class="cta">
+                DÉCOUVRIR LA COLLECTION →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+    <div class="category-grid">
+
+        <div class="category-card">
+
+            <img src="./images/new_ui/new_ui2.png">
+
+            <div class="category-content">
+                <div class="category-title">FEMME</div>
+                <div class="view-link">
+                    VOIR →
+                </div>
+            </div>
+
+        </div>
+
+        <div class="category-card">
+
+            <img src="./images/new_ui/new_ui2.png">
+
+            <div class="category-content">
+                <div class="category-title">HOMME</div>
+                <div class="view-link">
+                    VOIR →
+                </div>
+            </div>
+
+        </div>
+
+        <div class="category-card">
+
+            <img src="./images/new_ui/new_ui2.png">
+
+            <div class="category-content">
+                <div class="category-title">UNISEXE</div>
+                <div class="view-link">
+                    VOIR →
+                </div>
+            </div>
+
+        </div>
+
+        <div class="category-card">
+
+            <img src="./images/new_ui/new_ui2.png">
+
+            <div class="category-content">
+                <div class="category-title">ACCESSOIRES</div>
+                <div class="view-link">
+                    VOIR →
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h3>LIVRAISON RAPIDE</h3>
+        <p>Partout dans le monde</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">↺</div>
+        <h3>RETOURS FACILES</h3>
+        <p>Sous 14 jours</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>PAIEMENT SÉCURISÉ</h3>
+        <p>100% sécurisé</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">💎</div>
+        <h3>PIÈCES UNIQUES</h3>
+        <p>Éditions limitées</p>
+    </div>
+
+</section>
+
+</body>
+</html>

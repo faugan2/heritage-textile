@@ -1,0 +1,32 @@
+.impact-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:40px 0 8px}
+.impact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+.impact-stat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;transition:.3s;box-shadow:0 4px 14px rgba(20,33,90,.04)}
+.impact-stat:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.impact-stat__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.impact-stat__icon{width:48px;height:48px;border-radius:50%;background:var(--green-light);color:var(--green-dark);display:grid;place-items:center;font-size:1.2rem}
+.impact-stat__tag{font-size:.76rem;font-weight:700;padding:5px 11px;border-radius:999px;background:var(--cream);color:#8a5a00;border:1px solid #f7e5bb}
+.impact-stat b{display:block;font-size:2rem;font-weight:800;color:var(--green-dark)}
+.impact-stat span{font-size:.9rem;color:var(--muted)}
+
+.impact-table{width:100%;max-width:920px;margin:0 auto;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 14px rgba(20,33,90,.04)}
+.impact-table th{background:var(--green-dark);color:#fff;text-align:left;padding:14px 20px;font-size:.88rem;font-weight:600}
+.impact-table td{padding:14px 20px;border-bottom:1px solid var(--border);font-size:.94rem;color:var(--text)}
+.impact-table tr:last-child td{border-bottom:none}
+.impact-table td.num{font-weight:700;color:var(--green-dark)}
+.impact-table td.rev{font-weight:700;color:var(--orange)}
+
+.cert-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cert-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:.3s}
+.cert-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.cert-card i{font-size:2rem;color:var(--green-dark);margin-bottom:12px}
+.cert-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.cert-card b{display:block;font-size:2rem;font-weight:800;color:var(--orange)}
+.cert-card p{font-size:.8rem;color:var(--muted);margin-top:4px}
+
+@media (max-width:992px){
+  .impact-cards,.cert-cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .impact-cards,.cert-cards{grid-template-columns:1fr}
+  .impact-table th,.impact-table td{padding:12px 10px;font-size:.85rem}
+}

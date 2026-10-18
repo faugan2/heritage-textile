@@ -1,0 +1,21 @@
+.referral-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.referral-stat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px 16px;text-align:center}
+.referral-stat i{font-size:1.3rem;color:var(--orange);margin-bottom:10px}
+.referral-stat b{display:block;font-size:1.3rem;font-weight:800;color:var(--green-dark)}
+.referral-stat span{font-size:.8rem;color:var(--muted)}
+
+.referral-link{max-width:760px;margin:0 auto;background:#fff;border:2px solid var(--yellow);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
+.referral-link h2{font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:20px}
+.referral-link label{display:block;font-size:.76rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--green);margin:16px 0 8px}
+.referral-row{display:flex;gap:10px}
+.referral-row input{flex:1;padding:13px 16px;border:1px solid var(--border);border-radius:10px;font:inherit;font-size:.92rem;background:#f8f9fc;color:var(--navy);font-weight:600;outline:none}
+.referral-copy{width:52px;border-radius:12px;border:none;background:var(--yellow);color:var(--navy);font-size:1.1rem;cursor:pointer;transition:.2s}
+.referral-copy:hover{background:var(--yellow-dark)}
+.referral-hint{margin-top:18px;font-size:.84rem;color:var(--muted);text-align:center}
+
+@media (max-width:992px){
+  .referral-stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .referral-link{padding:24px}
+}

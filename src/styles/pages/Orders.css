@@ -1,0 +1,49 @@
+.orders-layout{display:grid;grid-template-columns:380px 1fr;gap:32px;align-items:start;padding:48px 0 24px}
+.order-form{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);position:sticky;top:110px}
+.order-form h2{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:18px}
+.side-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;background:#f6f7fb;border-radius:999px;padding:5px}
+.side-switch button{padding:10px;border-radius:999px;border:none;background:transparent;color:var(--muted);font:600 .92rem Poppins,sans-serif;cursor:pointer;transition:.2s}
+.side-switch button.is-buy.is-active{background:var(--green-dark);color:#fff}
+.side-switch button.is-sell.is-active{background:var(--orange);color:#fff}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.76rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.field input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;font:inherit;font-size:.94rem;background:#f8f9fc;color:var(--text);outline:none}
+.field input:focus{border-color:var(--yellow);background:#fff;box-shadow:0 0 0 3px rgba(252,196,25,.25)}
+.fee-preview{padding:16px 18px;border-radius:12px;background:var(--cream);border:1px solid #f7e5bb;font-size:.88rem;color:var(--muted);display:grid;gap:6px;margin-bottom:16px}
+.fee-preview b{color:var(--navy)}
+.fee-preview .is-fee{color:var(--orange);font-weight:700}
+.order-error{color:#b42318;font-size:.88rem;margin-bottom:12px}
+.order-form .btn,.order-form button.full{width:100%;justify-content:center;border:none;cursor:pointer;font-family:inherit}
+.order-form .btn-ghost{width:100%;margin-top:10px;padding:12px;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--muted);font:600 .88rem Poppins,sans-serif;cursor:pointer}
+
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.book-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+.book-card h2{font-size:1.02rem;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.book-card h2 i{color:var(--orange)}
+.book-row{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;background:#f8f9fc;margin-bottom:8px;font-size:.92rem}
+.book-row b{color:var(--navy)}
+.book-row span{color:var(--muted)}
+.book-empty{font-size:.88rem;color:var(--muted)}
+
+.trades{margin-top:22px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;grid-column:1 / -1}
+.trades h2{font-size:1.02rem;font-weight:700;color:var(--navy);margin-bottom:14px}
+.trades table{width:100%;border-collapse:collapse;font-size:.88rem}
+.trades th{text-align:left;padding:10px 8px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
+.trades td{padding:12px 8px;border-bottom:1px solid var(--border);color:var(--text)}
+.trades td.fee{color:var(--orange);font-weight:700}
+
+.orders-how{margin:24px 0 64px;padding:48px 40px;border-radius:var(--radius);background:#fff8e6;border:1px solid #f7e5bb}
+.orders-how h2{font-size:1.5rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:24px}
+.orders-how ol{max-width:720px;margin:0 auto;display:grid;gap:14px;counter-reset:s}
+.orders-how li{display:flex;gap:14px;color:var(--text);line-height:1.6;font-size:.95rem}
+.orders-how li b{color:var(--green-dark);min-width:24px}
+
+@media (max-width:992px){
+  .orders-layout{grid-template-columns:1fr}
+  .order-form{position:static}
+}
+@media (max-width:600px){
+  .book-grid{grid-template-columns:1fr}
+  .trades{overflow-x:auto}
+  .orders-how{padding:32px 22px}
+}

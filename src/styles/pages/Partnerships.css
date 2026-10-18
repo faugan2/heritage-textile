@@ -1,0 +1,37 @@
+.partner-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.partner-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.partner-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.partner-card__head{height:110px;background:linear-gradient(135deg,#eef7ef,#fff8e6);display:flex;align-items:center;justify-content:center;color:var(--green-dark);font-size:2.4rem;position:relative}
+.partner-card__status{position:absolute;top:12px;right:12px;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;background:#fff;color:var(--green-dark);border:1px solid #d6ebd9}
+.partner-card__status.is-pending{color:#8a5a00;border-color:#f7e5bb;background:#fff8e6}
+.partner-card__body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.partner-card h3{font-size:1.02rem;font-weight:700;color:var(--navy)}
+.partner-card__country{font-size:.8rem;color:var(--green)}
+.partner-card p{font-size:.86rem;color:var(--muted);line-height:1.55}
+.partner-card ul{display:grid;gap:6px;margin-top:4px}
+.partner-card li{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--text)}
+.partner-card li i{color:var(--green-dark)}
+.partner-card__since{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted)}
+
+.benefit-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.benefit{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;text-align:center;transition:.3s}
+.benefit:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.benefit i{font-size:2rem;color:var(--orange);margin-bottom:12px}
+.benefit h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.benefit p{font-size:.86rem;color:var(--muted)}
+
+.partner-cta{margin:0 0 64px;padding:56px 40px;border-radius:var(--radius);background:linear-gradient(90deg,#0d4f20,#14692b 60%,#0d4f20);color:#fff;text-align:center}
+.partner-cta h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin-bottom:12px}
+.partner-cta p{max-width:600px;margin:0 auto 26px;opacity:.95}
+.partner-cta .btn{border:none;cursor:pointer;font-family:inherit}
+
+@media (max-width:1100px){
+  .partner-cards{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:992px){
+  .partner-cards,.benefit-cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .partner-cards,.benefit-cards{grid-template-columns:1fr}
+  .partner-cta{padding:40px 22px}
+}
