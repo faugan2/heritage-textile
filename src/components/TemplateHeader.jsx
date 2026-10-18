@@ -6,28 +6,9 @@ import '../styles/components/TemplateHeader.css'
 
 const NAV_ITEMS = [
   { label: 'Accueil', path: '/' },
-  {
-    label: 'Boutique',
-    sub: [
-      { label: 'Tous les produits', path: '/products' },
-      { label: 'Pagnes & tissus', path: '/products' },
-      { label: 'Vêtements', path: '/femme' },
-      { label: 'Accessoires', path: '/products' }
-    ]
-  },
-  { label: 'Artisans', path: '/our-creators' },
-  { label: 'Patrimoine', path: '/heritage' },
-  { label: 'Boutiques & Publicité', path: '/boutiques-publicite' },
-  {
-    label: 'À propos',
-    sub: [
-      { label: 'Notre mission', path: '/project' },
-      { label: 'L\'équipe', path: '/about' },
-      { label: 'Partenaires', path: '/partnerships' },
-      { label: 'Actionnariat', path: '/shareholders' }
-    ]
-  },
-  { label: 'Contact', path: '/contact' }
+  { label: 'À propos', path: '/project' },
+  { label: 'Avantages', path: '/project' },
+  { label: 'Catégories', path: '/products' }
 ]
 
 const PLUS_CARDS = [

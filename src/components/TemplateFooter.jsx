@@ -2,12 +2,35 @@ import { Link } from 'react-router-dom'
 import '../styles/template/base.css'
 import '../styles/components/TemplateFooter.css'
 
-const FOOTER_LINKS = [
-  { label: 'À propos', path: '/about' },
-  { label: 'Contact', path: '/contact' },
-  { label: 'FAQ', path: '/faq' },
-  { label: 'Conditions d\'utilisation', path: '/terms' },
-  { label: 'Politique de confidentialité', path: '/privacy' }
+const FOOTER_SECTIONS = [
+  {
+    title: 'Boutique',
+    links: [
+      { label: 'Tous les produits', path: '/products' },
+      { label: 'Pagnes & tissus', path: '/products' },
+      { label: 'Vêtements', path: '/femme' },
+      { label: 'Accessoires', path: '/products' }
+    ]
+  },
+  {
+    title: 'Découvrir',
+    links: [
+      { label: 'Artisans', path: '/our-creators' },
+      { label: 'Patrimoine', path: '/heritage' },
+      { label: 'Boutiques & Publicité', path: '/boutiques-publicite' },
+      { label: 'Galerie', path: '/gallery' }
+    ]
+  },
+  {
+    title: 'Légal',
+    links: [
+      { label: 'À propos', path: '/about' },
+      { label: 'Contact', path: '/contact' },
+      { label: 'FAQ', path: '/faq' },
+      { label: 'Conditions d\'utilisation', path: '/terms' },
+      { label: 'Politique de confidentialité', path: '/privacy' }
+    ]
+  }
 ]
 
 const SOCIALS = [
@@ -28,16 +51,23 @@ export default function TemplateFooter() {
         </Link>
 
         <div className="footer__mid">
-          <div className="footer__row">
-            <ul className="footer__links">
-              {FOOTER_LINKS.map(link => (
-                <li key={link.label}>
-                  <Link to={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
+          <div className="footer__sections">
+            {FOOTER_SECTIONS.map((section, idx) => (
+              <div key={idx} className="footer__section">
+                <h4>{section.title}</h4>
+                <ul className="footer__links">
+                  {section.links.map(link => (
+                    <li key={link.label}>
+                      <Link to={link.path}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="footer__socials">
+            <h4>Suivez-nous</h4>
             <div className="social">
-              <span>Suivez-nous</span>
               {SOCIALS.map(s => (
                 <a key={s.label} href="#" className={s.cls} aria-label={s.label}>
                   <i className={s.faIcon}></i>
@@ -46,8 +76,8 @@ export default function TemplateFooter() {
             </div>
           </div>
           <p className="copy">
-            © {new Date().getFullYear()} VPTT. Tous droits réservés. <span className="sep">|</span>{' '}
-            <span className="motto">Notre patrimoine, notre valeur, notre avenir.</span>
+            © {new Date().getFullYear()} VPPT. Tous droits réservés. <span className="sep">|</span>{' '}
+            <span className="motto">Le textile africain au service du monde.</span>
           </p>
         </div>
       </div>
