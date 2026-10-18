@@ -27,10 +27,18 @@ const WHY_ITEMS = [
   'Une opportunité d\'investissement éthique'
 ]
 
+const HERO_IMAGES = [
+  { src: '/images/hero-template.png', alt: 'Femme africaine avec tissus traditionnels' },
+  { src: '/images/tissus.png', alt: 'Tissus colorés' },
+  { src: '/images/vetements.png', alt: 'Vêtements traditionnels' },
+  { src: '/images/accessoires.png', alt: 'Accessoires artisanaux' }
+]
+
 export default function TemplateHomePage() {
   const navigate = useNavigate()
   const { isAuthenticated } = useAuth()
   const [showVideoDialog, setShowVideoDialog] = useState(false)
+  const [currentImageIdx, setCurrentImageIdx] = useState(0)
 
   useEffect(() => {
     const io = new IntersectionObserver(entries => {
@@ -43,6 +51,14 @@ export default function TemplateHomePage() {
     }, { threshold: 0.15 })
     document.querySelectorAll('.reveal').forEach(el => io.observe(el))
     return () => io.disconnect()
+  }, [])
+
+  // Auto-slide carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIdx(prev => (prev + 1) % HERO_IMAGES.length)
+    }, 5000)
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -70,7 +86,26 @@ export default function TemplateHomePage() {
             <p className="trust"><span>♢</span> Une plateforme sûre · Transparente · Éthique</p>
           </div>
           <div className="hero-art">
-            <img src="/images/hero-template.png" alt="Femme africaine portant les textiles traditionnels colorés" />
+            <div className="carousel">
+              {HERO_IMAGES.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img.src}
+                  alt={img.alt}
+                  className={`carousel-slide ${idx === currentImageIdx ? 'active' : ''}`}
+                />
+              ))}
+            </div>
+            <div className="carousel-controls">
+              {HERO_IMAGES.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`dot ${idx === currentImageIdx ? 'active' : ''}`}
+                  onClick={() => setCurrentImageIdx(idx)}
+                  aria-label={`Image ${idx + 1}`}
+                />
+              ))}
+            </div>
             <div className="hero-note">Nos tissus,<br />notre fierté&nbsp;!</div>
           </div>
         </section>
