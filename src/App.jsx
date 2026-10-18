@@ -53,6 +53,7 @@ import { AdminUsersPage, AdminProductsPage, AdminOrdersPage, AdminContentPage, A
 
 // Pages - Info
 import AboutPage from './pages/AboutPage'
+import BenefitsPage from './pages/BenefitsPage'
 import ContactPage from './pages/ContactPage'
 import FAQPage from './pages/FAQPage'
 import ReturnPolicyPage from './pages/ReturnPolicyPage'
@@ -222,6 +223,7 @@ function AppContent() {
 
           {/* Info Pages */}
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/benefits" element={<BenefitsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/return-policy" element={<ReturnPolicyPage />} />

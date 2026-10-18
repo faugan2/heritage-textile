@@ -6,8 +6,8 @@ import '../styles/components/TemplateHeader.css'
 
 const NAV_ITEMS = [
   { label: 'Accueil', path: '/' },
-  { label: 'À propos', path: '/project' },
-  { label: 'Avantages', path: '/project' },
+  { label: 'À propos', path: '/about' },
+  { label: 'Avantages', path: '/benefits' },
   { label: 'Catégories', path: '/products' }
 ]
 
