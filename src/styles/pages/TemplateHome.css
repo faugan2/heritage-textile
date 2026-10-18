@@ -32,6 +32,7 @@
   overflow: hidden;
   background: linear-gradient(100deg, #fff 0%, #fff 48%, #faf7f3 100%);
   padding-left: max(5.5%, calc((100% - 1320px)/2));
+  padding-right: max(5.5%, calc((100% - 1320px)/2));
 }
 
 .hero-copy {
@@ -184,7 +185,7 @@
 .benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 28px max(5.5%, calc((100% - 1320px)/2)) 36px;
+  padding: 28px max(5.5%, calc((100% - 1320px)/2));
   gap: 20px;
   text-align: center;
   background: white;
@@ -330,7 +331,7 @@
 }
 
 .movement-copy {
-  padding: 43px 25px 40px max(5.5%, calc((100% - 1320px)/2));
+  padding: 43px max(5.5%, calc((100% - 1320px)/2)) 40px;
   position: relative;
   z-index: 1;
   display: flex;
