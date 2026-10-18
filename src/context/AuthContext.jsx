@@ -55,8 +55,14 @@ export function AuthProvider({ children }) {
     return () => unsubscribe()
   }, [])
 
-  const signup = async (email, password, displayName = '') => {
+  const signup = async (email, password, displayName = '', role = 'client') => {
     try {
+      // Validate role
+      const validRoles = ['client', 'artisan', 'admin']
+      if (!validRoles.includes(role)) {
+        role = 'client'
+      }
+
       // Create user account
       const result = await createUserWithEmailAndPassword(auth, email, password)
       const currentUser = result.user
@@ -66,15 +72,31 @@ export function AuthProvider({ children }) {
         uid: currentUser.uid,
         email: currentUser.email,
         displayName: displayName || email.split('@')[0],
-        role: 'user',
+        role: role,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
+        // Artisan-specific fields
+        ...(role === 'artisan' && {
+          businessName: '',
+          businessDescription: '',
+          businessLogo: '',
+          products: [],
+          followers: 0,
+          totalSales: 0,
+        }),
+        // Client-specific fields
+        ...(role === 'client' && {
+          shippingAddress: '',
+          paymentMethods: [],
+          orders: [],
+          wishlist: [],
+        }),
       })
 
       setUser(currentUser)
       setIsAuthenticated(true)
-      setUserRole('user')
-      return { success: true, user: currentUser }
+      setUserRole(role)
+      return { success: true, user: currentUser, role: role }
     } catch (error) {
       return { success: false, error: error.message }
     }
