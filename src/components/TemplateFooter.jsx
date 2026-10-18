@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom'
 import '../styles/pages/TemplateHome.css'
 
+const NAV_LINKS = [
+  { label: 'Accueil', path: '/' },
+  { label: 'À propos', path: '/about' },
+  { label: 'Avantages', path: '/#avantages' },
+  { label: 'Catégories', path: '/#categories' },
+  { label: 'Contact', path: '/contact' }
+]
+
 const FOOTER_SECTIONS = [
   {
     title: 'Boutique',
@@ -23,8 +31,6 @@ const FOOTER_SECTIONS = [
   {
     title: 'Légal',
     links: [
-      { label: 'À propos', path: '/about' },
-      { label: 'Contact', path: '/contact' },
       { label: 'FAQ', path: '/faq' },
       { label: 'Conditions d\'utilisation', path: '/terms' },
       { label: 'Politique de confidentialité', path: '/privacy' }
@@ -34,42 +40,58 @@ const FOOTER_SECTIONS = [
 
 const SOCIALS = [
   { label: 'Facebook', icon: 'f' },
+  { label: 'Twitter', icon: '𝕏' },
   { label: 'Instagram', icon: '◎' },
   { label: 'YouTube', icon: '▶' },
-  { label: 'X', icon: '𝕏' },
   { label: 'LinkedIn', icon: 'in' }
 ]
 
 export default function TemplateFooter() {
   return (
     <footer className="site-footer">
-      <div className="footer-brand">
-        <Link to="/" className="brand">
+      <div className="footer-top">
+        <Link to="/" className="brand footer-brand">
           <span className="brand-mark">✦</span>
           <span className="brand-copy">
             <strong>VPPT</strong>
             <small>Valorisation et promotion<br />des textiles traditionnels</small>
           </span>
         </Link>
+
+        <nav className="footer-nav-main">
+          {NAV_LINKS.map(link => (
+            <Link key={link.label} to={link.path}>{link.label}</Link>
+          ))}
+        </nav>
+
+        <div className="footer-right">
+          <div className="socials">
+            {SOCIALS.map(s => (
+              <a key={s.label} href="#" className={`social-${s.label.toLowerCase()}`} aria-label={s.label}>{s.icon}</a>
+            ))}
+          </div>
+          <p className="footer-slogan">Le textile africain<br />au service du monde</p>
+        </div>
       </div>
 
-      <nav className="footer-nav">
-        {FOOTER_SECTIONS.flatMap(section => section.links).map(link => (
-          <Link key={link.label} to={link.path}>{link.label}</Link>
-        ))}
-      </nav>
-
-      <div className="socials">
-        {SOCIALS.map(s => (
-          <a key={s.label} href="#" aria-label={s.label}>{s.icon}</a>
+      <div className="footer-sections">
+        {FOOTER_SECTIONS.map((section, idx) => (
+          <div key={idx} className="footer-section">
+            <h4>{section.title}</h4>
+            <ul>
+              {section.links.map(link => (
+                <li key={link.label}>
+                  <Link to={link.path}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
 
-      <p className="footer-slogan">
-        Le textile africain<br />au service du monde <span>◆</span>
-      </p>
-
-      <small className="copyright">© {new Date().getFullYear()} VPPT. Tous droits réservés.</small>
+      <div className="copyright-bar">
+        © {new Date().getFullYear()} VPPT. Tous droits réservés.
+      </div>
     </footer>
   )
 }
