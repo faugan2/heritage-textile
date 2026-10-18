@@ -6,11 +6,11 @@ import TemplateFooter from '../components/TemplateFooter'
 import '../styles/pages/TemplateHome.css'
 
 const CATEGORIES = [
-  { id: 1, label: 'Tissus', image: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=700&q=85', path: '/products' },
-  { id: 2, label: 'Vêtements', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=85', path: '/femme' },
-  { id: 3, label: 'Accessoires', image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85', path: '/products' },
-  { id: 4, label: 'Artisanat', image: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=700&q=85', path: '/our-creators' },
-  { id: 5, label: 'Boutiques & Publicité', image: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=700&q=85', path: '/boutiques-publicite' }
+  { id: 1, label: 'Tissus', image: '/images/tissus.png', path: '/products' },
+  { id: 2, label: 'Vêtements', image: '/images/vetements.png', path: '/femme' },
+  { id: 3, label: 'Accessoires', image: '/images/accessoires.png', path: '/products' },
+  { id: 4, label: 'Artisanat', image: '/images/pagnes.png', path: '/our-creators' },
+  { id: 5, label: 'Boutiques & Publicité', image: '/images/unisex.png', path: '/boutiques-publicite' }
 ]
 
 const BENEFITS = [
