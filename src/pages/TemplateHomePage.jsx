@@ -70,7 +70,7 @@ export default function TemplateHomePage() {
             <p className="trust"><span>♢</span> Une plateforme sûre · Transparente · Éthique</p>
           </div>
           <div className="hero-art">
-            <img src="/images/photo.png" alt="Portrait d'une femme portant des bijoux artisanaux" />
+            <img src="/images/hero-template.png" alt="Femme africaine portant les textiles traditionnels colorés" />
             <div className="hero-note">Nos tissus,<br />notre fierté&nbsp;!</div>
           </div>
         </section>
