@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../styles/template/base.css'
-import '../styles/components/TemplateFooter.css'
+import '../styles/pages/TemplateHome.css'
 
 const FOOTER_SECTIONS = [
   {
@@ -34,53 +33,43 @@ const FOOTER_SECTIONS = [
 ]
 
 const SOCIALS = [
-  { cls: 's-fb', label: 'Facebook', faIcon: 'fa-brands fa-facebook-f' },
-  { cls: 's-ig', label: 'Instagram', faIcon: 'fa-brands fa-instagram' },
-  { cls: 's-tt', label: 'TikTok', faIcon: 'fa-brands fa-tiktok' },
-  { cls: 's-yt', label: 'YouTube', faIcon: 'fa-brands fa-youtube' },
-  { cls: 's-in', label: 'LinkedIn', faIcon: 'fa-brands fa-linkedin-in' },
-  { cls: 's-x', label: 'X', faIcon: 'fa-brands fa-x-twitter' }
+  { label: 'Facebook', icon: 'f' },
+  { label: 'Instagram', icon: '◎' },
+  { label: 'YouTube', icon: '▶' },
+  { label: 'X', icon: '𝕏' },
+  { label: 'LinkedIn', icon: 'in' }
 ]
 
 export default function TemplateFooter() {
   return (
-    <footer className="footer">
-      <div className="container footer__inner">
-        <Link to="/" className="logo">
-          <img src="/new_logo.png" alt="VPTT - Valorisation et Promotion des Textiles Traditionnels" className="logo__img" />
+    <footer className="site-footer">
+      <div className="footer-brand">
+        <Link to="/" className="brand">
+          <span className="brand-mark">✦</span>
+          <span className="brand-copy">
+            <strong>VPPT</strong>
+            <small>Valorisation et promotion<br />des textiles traditionnels</small>
+          </span>
         </Link>
-
-        <div className="footer__mid">
-          <div className="footer__sections">
-            {FOOTER_SECTIONS.map((section, idx) => (
-              <div key={idx} className="footer__section">
-                <h4>{section.title}</h4>
-                <ul className="footer__links">
-                  {section.links.map(link => (
-                    <li key={link.label}>
-                      <Link to={link.path}>{link.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="footer__socials">
-            <h4>Suivez-nous</h4>
-            <div className="social">
-              {SOCIALS.map(s => (
-                <a key={s.label} href="#" className={s.cls} aria-label={s.label}>
-                  <i className={s.faIcon}></i>
-                </a>
-              ))}
-            </div>
-          </div>
-          <p className="copy">
-            © {new Date().getFullYear()} VPPT. Tous droits réservés. <span className="sep">|</span>{' '}
-            <span className="motto">Le textile africain au service du monde.</span>
-          </p>
-        </div>
       </div>
+
+      <nav className="footer-nav">
+        {FOOTER_SECTIONS.flatMap(section => section.links).map(link => (
+          <Link key={link.label} to={link.path}>{link.label}</Link>
+        ))}
+      </nav>
+
+      <div className="socials">
+        {SOCIALS.map(s => (
+          <a key={s.label} href="#" aria-label={s.label}>{s.icon}</a>
+        ))}
+      </div>
+
+      <p className="footer-slogan">
+        Le textile africain<br />au service du monde <span>◆</span>
+      </p>
+
+      <small className="copyright">© {new Date().getFullYear()} VPPT. Tous droits réservés.</small>
     </footer>
   )
 }
