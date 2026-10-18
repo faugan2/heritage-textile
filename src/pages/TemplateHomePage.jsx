@@ -96,6 +96,20 @@ export default function TemplateHomePage() {
                 />
               ))}
             </div>
+            <button
+              className="carousel-arrow carousel-prev"
+              onClick={() => setCurrentImageIdx(prev => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length)}
+              aria-label="Image précédente"
+            >
+              ‹
+            </button>
+            <button
+              className="carousel-arrow carousel-next"
+              onClick={() => setCurrentImageIdx(prev => (prev + 1) % HERO_IMAGES.length)}
+              aria-label="Image suivante"
+            >
+              ›
+            </button>
             <div className="carousel-controls">
               {HERO_IMAGES.map((_, idx) => (
                 <button
