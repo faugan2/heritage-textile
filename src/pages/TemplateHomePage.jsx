@@ -70,7 +70,7 @@ export default function TemplateHomePage() {
             <p className="trust"><span>♢</span> Une plateforme sûre · Transparente · Éthique</p>
           </div>
           <div className="hero-art">
-            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85" alt="Portrait d'une femme portant des bijoux artisanaux" />
+            <img src="/images/hero.jpg" alt="Portrait d'une femme portant des bijoux artisanaux" />
             <div className="hero-note">Nos tissus,<br />notre fierté&nbsp;!</div>
           </div>
         </section>
@@ -141,7 +141,7 @@ export default function TemplateHomePage() {
             </div>
           </div>
           <div className="movement-art">
-            <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1100&q=85" alt="Tissus colorés fabriqués artisanalement" />
+            <img src="/images/hero2.jpg" alt="Tissus colorés fabriqués artisanalement" />
             <div className="movement-note">Ensemble pour<br />un avenir meilleur</div>
           </div>
         </section>
